@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/lovable-uploads/c1c81544-4ab3-4a79-b7f6-3fef04c59485.png" 
+                src="/lovable-uploads/DCA_logo_2.png" 
                 alt="DCA Logo" 
                 className="w-12 h-12 object-contain"
               />
