@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DCA Port-themed Design System - Professional Chemical Trading */
+
+@layer base {
+  :root {
+    /* Brand Colors - DCA Chemical Trading */
+    --brand-maroon: 355 60% 30%;
+    --brand-maroon-foreground: 30 20% 97%;
+    
+    --sunset-orange: 25 95% 53%;
+    --sunset-orange-foreground: 355 60% 30%;
+    
+    --deep-navy: 214 85% 24%;
+    --deep-navy-foreground: 30 20% 97%;
+    
+    --steel-grey: 220 13% 28%;
+    --steel-grey-foreground: 30 20% 97%;
+    
+    --off-white: 30 20% 97%;
+    --off-white-foreground: 220 13% 28%;
+
+    /* Core Theme Colors */
+    --background: 30 20% 97%;
+    --foreground: 220 13% 28%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 28%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 28%;
+
+    --primary: 355 60% 30%;
+    --primary-foreground: 30 20% 97%;
+
+    --secondary: 214 85% 24%;
+    --secondary-foreground: 30 20% 97%;
+
+    --muted: 220 13% 94%;
+    --muted-foreground: 220 13% 45%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 355 60% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 20% 97%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 355 60% 30%;
+
+    /* Port Theme Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(355 60% 30%) 0%, hsl(214 85% 24%) 50%, hsl(25 95% 53%) 100%);
+    --gradient-sunset: linear-gradient(180deg, hsl(25 95% 53% / 0.1) 0%, hsl(355 60% 30% / 0.05) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(17,17,17,0.55) 0%, rgba(17,17,17,0.65) 50%, rgba(17,17,17,0.75) 100%);
+
+    /* Shadows & Effects */
+    --shadow-port: 0 10px 40px -10px hsl(355 60% 30% / 0.3);
+    --shadow-container: 0 4px 20px -2px hsl(214 85% 24% / 0.2);
+    --shadow-elegant: 0 8px 30px -8px hsl(220 13% 28% / 0.25);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold tracking-wide;
+  }
+}
+
+@layer components {
+  /* Port Theme Button Variants */
+  .btn-port-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-port transition-all duration-300 font-montserrat font-semibold tracking-wide rounded-xl px-8 py-4;
+  }
+
+  .btn-port-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-container transition-all duration-300 font-montserrat font-semibold tracking-wide rounded-xl px-8 py-4;
+  }
+
+  .btn-port-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 shadow-elegant transition-all duration-300 font-montserrat font-semibold tracking-wide rounded-xl px-6 py-3;
+  }
+
+  .btn-port-outline {
+    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-montserrat font-semibold tracking-wide rounded-xl px-8 py-4;
+  }
+
+  /* Port Theme Card Variants */
+  .card-port-elevated {
+    @apply bg-card rounded-2xl shadow-elegant border border-border/50 p-8 transition-all duration-300 hover:shadow-port hover:-translate-y-1;
+  }
+
+  .card-port-container {
+    @apply bg-card rounded-xl shadow-container border border-border/30 p-6 transition-all duration-300 hover:shadow-elegant;
+  }
+
+  /* Hero Section Styles */
+  .hero-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .section-gradient {
+    background: var(--gradient-sunset);
+  }
+
+  /* Port Theme Text Styles */
+  .text-port-heading {
+    @apply font-montserrat font-bold text-foreground tracking-wide leading-tight;
+  }
+
+  .text-port-subheading {
+    @apply font-montserrat font-semibold text-muted-foreground tracking-wide leading-relaxed;
+  }
+
+  .text-port-body {
+    @apply font-inter text-foreground leading-relaxed;
+  }
+
+  /* Navigation Styles */
+  .nav-port {
+    @apply bg-card/95 backdrop-blur-md border-b border-border/50 shadow-elegant;
+  }
+
+  /* Form Styles */
+  .form-port {
+    @apply border border-border rounded-xl bg-card/50 backdrop-blur-sm;
+  }
+
+  /* Animation Classes */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-port;
+  }
+}
+
+@layer utilities {
+  .font-russo {
+    font-family: 'Russo One', 'Montserrat Alternates', 'Montserrat', sans-serif;
+  }
+
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+
+  .shadow-port {
+    box-shadow: var(--shadow-port);
+  }
+
+  .shadow-container {
+    box-shadow: var(--shadow-container);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
