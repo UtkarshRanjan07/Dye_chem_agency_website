@@ -129,7 +129,7 @@ const Footer = () => {
         <div className="border-t border-gradient-subtle/30 mt-12 pt-8 bg-gradient-to-r from-steel-grey/50 to-transparent rounded-t-2xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm opacity-90 mb-4 md:mb-0 font-medium">
-              © {currentYear} Dye Chem Agency. All rights reserved. | GST: [Registration Number]
+              © {currentYear} Dye Chem Agency. All rights reserved.
             </div>
             <div className="text-xs opacity-75 bg-steel-grey/30 px-3 py-1 rounded-full">
               Registered Office: Mumbai, Maharashtra, India
