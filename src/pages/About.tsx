@@ -28,7 +28,7 @@ const About = () => {
     {
       year: "2010s",
       title: "Leadership Transition",
-      description: "Mr. Kalpesh H. Vora took leadership as CEO, bringing second-generation expertise and innovation.",
+      description: "Mr. Kalpesh H. Vora took leadership as Proprietor, bringing second-generation expertise and innovation.",
     },
     {
       year: "Today",
@@ -66,7 +66,7 @@ const About = () => {
               
               <div className="prose prose-lg text-muted-foreground font-inter leading-relaxed space-y-6">
                 <p>
-                  Founded in 1977 by the late Mr. Hirachand Vora, Dye Chem Agency brings over four decades of unmatched expertise in the chemical trading industry. Today, the company is led by Mr. Kalpesh H. Vora, continuing the legacy as CEO and second-generation entrepreneur.
+                  Founded in 1977 by the late Mr. Hirachand Vora, Dye Chem Agency brings over four decades of unmatched expertise in the chemical trading industry. Today, the company is led by Mr. Kalpesh H. Vora, continuing the legacy as Proprietor and second-generation entrepreneur.
                 </p>
                 
                 <p>
@@ -166,7 +166,7 @@ const About = () => {
               </h3>
               
               <div className="text-lg font-montserrat font-semibold text-accent mb-4">
-                Chief Executive Officer
+              Proprietor
               </div>
               
               <p className="text-muted-foreground font-inter leading-relaxed mb-6">
