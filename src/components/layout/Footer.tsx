@@ -66,7 +66,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-accent" />
                 <div className="text-sm">
                   <span className="font-medium">Office:</span> 022-4973 0014, 022-2363 1473<br />
-                  <span className="font-medium">CEO Mobile:</span> +91 98210 30508
+                  <span className="font-medium">Mobile:</span> +91 9987020507, +91 85918 84487
                 </div>
               </div>
               

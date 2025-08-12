@@ -148,7 +148,7 @@ const Contact = () => {
                         <div><span className="font-medium">Office:</span> 022-4973 0014</div>
                         <div><span className="font-medium">Office:</span> 022-2363 1473</div>
                         <div><span className="font-medium">Office:</span> 022-2363 1483</div>
-                        <div><span className="font-medium">CEO Mobile:</span> +91 98210 30508</div>
+                        <div><span className="font-medium">Mobile:</span> +91 9987020507, +91 85918 84487</div>
                       </div>
                     </div>
                   </div>
