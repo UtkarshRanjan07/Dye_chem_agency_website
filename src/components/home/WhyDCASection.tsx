@@ -28,11 +28,11 @@ const WhyDCASection = () => {
       title: "48+ Years Experience",
       description: "Nearly five decades of expertise in chemical trading and industry relationships.",
     },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: "Global Reach",
-      description: "Serving both domestic and international markets with reliable shipment capabilities.",
-    },
+    //{
+    //  icon: <Globe className="w-6 h-6" />,
+    //  title: "Global Reach",
+    //  description: "Serving both domestic and international markets with reliable shipment capabilities.",
+    //},
   ];
 
   return (

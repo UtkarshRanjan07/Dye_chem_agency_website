@@ -20,11 +20,11 @@ const About = () => {
       title: "Infrastructure Growth",
       description: "Established warehousing facilities and strengthened distribution networks across Maharashtra and Gujarat.",
     },
-    {
-      year: "2000s",
-      title: "International Trade",
-      description: "Entered international markets, building relationships with global suppliers and customers.",
-    },
+    //{
+    //  year: "2000s",
+    //  title: "International Trade",
+    //  description: "Entered international markets, building relationships with global suppliers and customers.",
+    //},
     {
       year: "2010s",
       title: "Leadership Transition",
@@ -33,7 +33,7 @@ const About = () => {
     {
       year: "Today",
       title: "Industry Leader",
-      description: "Leading chemical trading company with 48+ years of experience, serving domestic and international markets.",
+      description: "Leading chemical trading company with 48+ years of experience, serving domestic markets.",
     },
   ];
 
@@ -70,7 +70,7 @@ const About = () => {
                 </p>
                 
                 <p>
-                  With its headquarters in Mumbai and a branch office in Ahmedabad, Dye Chem Agency serves a wide array of clients in both domestic and international markets. The company specializes in chemicals used across the dyes, glass, textile, detergent, agriculture, and food processing sectors.
+                  With its headquarters in Mumbai and a branch office in Ahmedabad, Dye Chem Agency serves a wide array of clients in domestic markets. The company specializes in chemicals used across the dyes, glass, textile, detergent, agriculture, and food processing sectors.
                 </p>
                 
                 <p>

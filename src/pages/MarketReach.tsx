@@ -75,7 +75,7 @@ const MarketReach = () => {
             </h1>
             <p className="text-xl text-muted-foreground font-inter leading-relaxed max-w-3xl mx-auto">
               Comprehensive industries coverage and robust logistics infrastructure 
-              enabling efficient domestic and international chemical trading operations.
+              enabling efficient domestic chemical trading operations.
             </p>
           </div>
         </div>
@@ -224,7 +224,7 @@ const MarketReach = () => {
               
               <p className="text-xl text-muted-foreground font-inter leading-relaxed mb-8">
                 Actively engaged in global chemical trading, we guarantee consistent product quality, 
-                reliable shipments, and competitive pricing for our overseas clientele.
+                reliable shipments, and competitive pricing for our clientele.
               </p>
 
               <div className="space-y-6">
@@ -237,7 +237,7 @@ const MarketReach = () => {
                       Global Market Access
                     </h3>
                     <p className="text-muted-foreground font-inter leading-relaxed">
-                      Established relationships with international suppliers and customers across multiple continents.
+                      Established relationships with international suppliers across multiple continents.
                     </p>
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, FileText } from "lucide-react";
 import heroPortImage from "@/assets/hero-port.jpg";
+import { Truck, BadgeCheck } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -38,7 +39,7 @@ const HeroSection = () => {
                  animationDelay: '0.2s',
                  textShadow: '0 1px 12px rgba(0,0,0,0.35)'
                }}>
-            <span style={{ color: '#F97316' }}>Established 1977</span> • Mumbai & Ahmedabad • <span style={{ color: '#F97316' }}>Global</span> Chemical Trading
+            <span style={{ color: '#F97316' }}>Established 1977</span> • Mumbai & Ahmedabad • <span style={{ color: '#F97316' }}>Chemical Trading</span> 
           </div>
 
           {/* Description */}
@@ -49,7 +50,7 @@ const HeroSection = () => {
                animationDelay: '0.4s',
                textShadow: '0 1px 12px rgba(0,0,0,0.35)'
              }}>
-            Over four decades of unmatched expertise in chemical trading, serving domestic and international markets with reliable quality, competitive pricing, and optimized logistics.
+            Over four decades of unmatched expertise in chemical trading, serving domestic markets with reliable quality, competitive pricing, and optimized logistics.
           </p>
 
           {/* CTA Buttons */}
@@ -108,19 +109,21 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="p-6 text-center rounded-lg border" 
+            <div className="p-6 text-center rounded-lg border"
                  style={{ 
                    background: 'rgba(255,255,255,0.10)', 
                    border: '1px solid rgba(255,255,255,0.25)', 
                    backdropFilter: 'blur(8px)',
                    color: '#FFFFFF'
                  }}>
+              
               <div className="text-lg md:text-xl font-montserrat font-bold mb-2" style={{ color: '#F97316' }}>
-                Domestic &
+                Optimised
               </div>
               <div className="text-sm md:text-base font-medium">
-                International Trade
+                Logistics
               </div>
+              <Truck className="w-8 h-8 mx-auto mt-3 text-orange-500" strokeWidth={2} />
             </div>
 
             <div className="p-6 text-center rounded-lg border" 
@@ -136,6 +139,7 @@ const HeroSection = () => {
               <div className="text-sm md:text-base font-medium">
                 Quality & Pricing
               </div>
+              <BadgeCheck className="w-8 h-8 mx-auto mt-3 text-orange-500" />
             </div>
           </div>
         </div>

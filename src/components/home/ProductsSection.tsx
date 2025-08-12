@@ -29,7 +29,11 @@ const ProductsSection = () => {
     {
       icon: <Truck className="w-8 h-8" />,
       title: "Technical Grade",
-      description: "Super Refined Salt, Urea, White & Yellow Dextrin, Caustic Soda",
+      description: (
+        <>
+          Super Refined Salt, Urea, White & Yellow Dextrin, Caustic  <br /> Soda
+        </>
+      ),
       count: "Products",
       color: "bg-steel-grey",
     },

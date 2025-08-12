@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
             <p className="text-sm opacity-90 mb-6 leading-relaxed">
               Over four decades of unmatched expertise in chemical trading, serving 
-              domestic and international markets with reliable quality and competitive pricing.
+              domestic markets with reliable quality and competitive pricing.
             </p>
             
             {/* Contact Info */}
