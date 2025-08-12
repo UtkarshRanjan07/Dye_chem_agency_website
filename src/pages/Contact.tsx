@@ -66,7 +66,7 @@ const Contact = () => {
     const message = encodeURIComponent(
       `Hello DCA Team, I'm interested in learning more about your chemical products and services.`
     );
-    window.open(`https://wa.me/919821030508?text=${message}`, "_blank");
+    window.open(`https://wa.me/+91 85918 84487?text=${message}`, "_blank");
   };
 
   const productOptions = [
