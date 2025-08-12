@@ -5,11 +5,22 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";  // UPDATED
+import { useEffect } from "react";  // ADDED
+
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("All");
+
+  const [searchParams, setSearchParams] = useSearchParams();  // ADDED
+
+  // ADDED — place this directly below the searchParams line
+  useEffect(() => {
+    const f = searchParams.get("filter");
+    const valid = ["All", "Industrial", "Food", "Dyes"];
+    if (f && valid.includes(f)) setSelectedFilter(f);
+  }, [searchParams]);
 
   const products = [
     {
@@ -154,6 +165,17 @@ const Products = () => {
     window.location.href = `/contact?product=${encodeURIComponent(productName)}`;
   };
 
+  const onSelectFilter = (cat: string) => {
+    setSelectedFilter(cat);
+    if (cat === "All") {
+      searchParams.delete("filter");
+      setSearchParams(searchParams, { replace: true });
+    } else {
+      setSearchParams({ filter: cat }, { replace: true });
+    }
+  };
+  
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -196,7 +218,7 @@ const Products = () => {
                     key={category}
                     variant={selectedFilter === category ? "default" : "outline"}
                     size="sm"
-                    onClick={() => setSelectedFilter(category)}
+                    onClick={() => onSelectFilter(category)}
                     className="font-montserrat"
                   >
                     {category}

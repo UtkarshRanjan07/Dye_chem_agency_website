@@ -11,6 +11,7 @@ const ProductsSection = () => {
       description: "Anhydrous Sodium Sulphate, Ammonium Chloride, Soda Ash Light & Dense",
       count: "Products",
       color: "bg-primary",
+      filterKey: "Industrial" as const,
     },
     {
       icon: <Factory className="w-8 h-8" />,
@@ -18,6 +19,8 @@ const ProductsSection = () => {
       description: "Basic, Reactive, Direct, and Acid dyes for textile and industrial applications",
       count: "Varieties",
       color: "bg-accent",
+      filterKey: "Dyes" as const,
+      
     },
     {
       icon: <Leaf className="w-8 h-8" />,
@@ -25,6 +28,7 @@ const ProductsSection = () => {
       description: "Sodium Bicarbonate, Dextrose Monohydrate, Glucose, and Maize Starch",
       count: "Products",
       color: "bg-secondary",
+      filterKey: "Food" as const,
     },
     {
       icon: <Truck className="w-8 h-8" />,
@@ -36,11 +40,13 @@ const ProductsSection = () => {
       ),
       count: "Products",
       color: "bg-steel-grey",
+      filterKey: "Industrial" as const,
+      
     },
   ];
 
   return (
-    <section className="py-20 section-gradient">
+    <section className="py-20 section-gradient">  
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -49,15 +55,16 @@ const ProductsSection = () => {
           </h2>
           <p className="text-xl text-muted-foreground font-inter leading-relaxed max-w-3xl mx-auto">
             A comprehensive range of industrial, food-grade, and technical-grade chemicals 
-            serving multiple industries across domestic and international markets.
+            serving multiple industries across domestic markets.
           </p>
         </div>
 
         {/* Product Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {productCategories.map((category, index) => (
-            <div 
+            <Link
               key={category.title}
+              to={`/products?filter=${encodeURIComponent(category.filterKey)}`}
               className="card-port-elevated group hover-lift animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -79,7 +86,7 @@ const ProductsSection = () => {
                 </span>
                 <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-300" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
