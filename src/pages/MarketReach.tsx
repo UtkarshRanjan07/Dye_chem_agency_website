@@ -2,7 +2,7 @@ import { Truck, Globe, Factory, Wheat, Shirt, Beaker, Home, Building } from "luc
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import warehouseImage from "@/assets/warehouse.jpg";
-import chemicalContainersImage from "@/assets/chemical-containers.jpg";
+import chemicalContainersImage from "@/assets/packaging-boxes.jpg";
 
 const MarketReach = () => {
   const industries = [
