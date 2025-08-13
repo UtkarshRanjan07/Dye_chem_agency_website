@@ -181,6 +181,39 @@ const Products = () => {
       setSearchParams({ filter: cat }, { replace: true });
     }
   };
+
+  const downloadCatalog = () => {
+    // headers
+    const headers = ["Name", "Category", "Grades", "Applications", "Description"];
+  
+    // rows from your `products` array
+    const rows = products.map((p) => [
+      p.name,
+      p.category,
+      p.grades.join(" | "),
+      p.applications.join(" | "),
+      (p.description || "").toString().replace(/\n/g, " "),
+    ]);
+  
+    // CSV escape + join
+    const toCsvLine = (cells: (string | number)[]) =>
+      cells
+        .map((v) => `"${String(v).replace(/"/g, '""')}"`)
+        .join(",");
+  
+    const csv = [toCsvLine(headers), ...rows.map(toCsvLine)].join("\r\n");
+  
+    // trigger download
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `DCA_Products_${new Date().toISOString().slice(0, 10)}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
   
 
   return (
@@ -234,7 +267,7 @@ const Products = () => {
               </div>
             </div>
             
-            <Button className="btn-port-accent">
+            <Button className="btn-port-accent" onClick={downloadCatalog} aria-label="Download product catalog (CSV)">
               <Download className="mr-2 w-4 h-4" />
               Download Catalog
             </Button>
