@@ -6,7 +6,7 @@ import { Truck, BadgeCheck } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[88vh] md:min-h-screen flex items-start md:items-center justify-center overflow-visible pt-12 md:pt-0 pb-20 md:pb-0">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
-          <h1 className="font-russo font-black text-white uppercase tracking-wide mb-6 animate-fade-in-up whitespace-nowrap" 
+          <h1 className="font-russo font-black text-white uppercase tracking-wide mb-6 animate-fade-in-up break-words md:whitespace-nowrap leading-tight" 
               style={{ 
                 fontSize: 'clamp(40px, 7vw, 96px)', 
                 lineHeight: '0.95', 
@@ -75,7 +75,7 @@ const HeroSection = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <div className="mt-8 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <div className="p-6 text-center rounded-lg border" 
                  style={{ 
                    background: 'rgba(255,255,255,0.10)', 
@@ -109,7 +109,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="p-6 text-center rounded-lg border"
+            <div className="p-4 md:p-6 text-center rounded-lg border"
                  style={{ 
                    background: 'rgba(255,255,255,0.10)', 
                    border: '1px solid rgba(255,255,255,0.25)', 
