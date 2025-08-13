@@ -7,6 +7,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Link, useSearchParams } from "react-router-dom";  // UPDATED
 import { useEffect } from "react";  // ADDED
+import { useRef } from "react";
 
 
 const Products = () => {
@@ -14,12 +15,18 @@ const Products = () => {
   const [selectedFilter, setSelectedFilter] = useState("All");
 
   const [searchParams, setSearchParams] = useSearchParams();  // ADDED
+  const filterRef = useRef<HTMLDivElement | null>(null); // ADDED
 
   // ADDED — place this directly below the searchParams line
   useEffect(() => {
     const f = searchParams.get("filter");
     const valid = ["All", "Industrial", "Food", "Dyes"];
-    if (f && valid.includes(f)) setSelectedFilter(f);
+    if (f && valid.includes(f)) {
+      setSelectedFilter(f);
+      setTimeout(() => {
+        filterRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100); // ADDED smooth scroll to filters
+    }
   }, [searchParams]);
 
   const products = [
@@ -199,7 +206,7 @@ const Products = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           {/* Search and Filter */}
-          <div className="flex flex-col md:flex-row gap-6 mb-12">
+          <div ref={filterRef} className="flex flex-col md:flex-row gap-6 mb-12 scroll-mt-28">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
               <Input
