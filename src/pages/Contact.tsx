@@ -360,18 +360,33 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="card-port-elevated">
-            <div className="aspect-video bg-muted rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-muted-foreground/50 mx-auto mb-4" />
-                <h3 className="text-xl font-montserrat font-bold text-foreground mb-2">
-                  Interactive Map
-                </h3>
-                <p className="text-muted-foreground font-inter">
-                  Opera House, Girgaon, Mumbai 400004<br />
-                  <span className="text-sm">Google Maps integration would be implemented here</span>
-                </p>
-              </div>
+          <div className="card-port-elevated overflow-hidden rounded-xl">
+            {/* Embedded Google Map */}
+            <div className="relative aspect-video">
+            <iframe
+              title="Dye Chem Agency — Head Office"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.4744886072235!2d72.8175991!3d18.9546411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce1033e654b9%3A0x5a9c829e705ccffb!2sDYE%20CHEM%20AGENCY!5e0!3m2!1sen!2sin!4v1755167228163!5m2!1sen!2sin"
+              className="absolute inset-0 w-full h-full border-0 rounded-xl"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            </div>
+
+            {/* Footer with address + open-in-maps button */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-4">
+              <p className="text-sm text-muted-foreground">
+                Opera House, Girgaon, Mumbai 400004
+              </p>
+              <Button asChild className="btn-port-primary">
+                <a
+                  href="https://maps.app.goo.gl/fChUyXMLHMtt4mmx8?g_st=ipc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open in Google Maps
+                </a>
+              </Button>
             </div>
           </div>
         </div>
