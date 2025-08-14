@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import emailjs from "@emailjs/browser"; // ADDED
 
 const Careers = () => {
   const [formData, setFormData] = useState({
@@ -22,27 +23,47 @@ const Careers = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      // (Optional) guard to catch missing env variables early
+      if (
+        !import.meta.env.VITE_EMAILJS_SERVICE_ID ||
+        !import.meta.env.VITE_EMAILJS_TEMPLATE_ID_CAREERS ||
+        !import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      ) {
+        throw new Error("EmailJS env vars missing. Check .env and restart dev server.");
+      }
+  
+      // Match these keys in your EmailJS template
+      const templateParams = {
+        applicant_name: formData.name,
+        applicant_email: formData.email,
+        applicant_phone: formData.phone,
+        role_interest: formData.role || "Not specified",
+        cover_message: formData.message || "-",
+        submitted_at: new Date().toLocaleString(),
+        site_url: typeof window !== "undefined" ? window.location.href : "",
+      };
+  
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_CAREERS,
+        templateParams,
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+      );
+  
       toast({
         title: "Application Submitted Successfully!",
         description: "We'll review your application and get back to you soon.",
       });
-      
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        role: "",
-        message: "",
-      });
-    } catch (error) {
+  
+      // reset form state
+      setFormData({ name: "", email: "", phone: "", role: "", message: "" });
+    } catch (error: any) {
+      console.error("EmailJS error:", error?.text || error?.message || error);
       toast({
         title: "Submission Failed",
-        description: "Please try again later or contact us directly.",
+        description: error?.text || error?.message || "Please try again or contact us directly.",
         variant: "destructive",
       });
     } finally {
