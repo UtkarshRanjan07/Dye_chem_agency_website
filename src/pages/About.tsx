@@ -8,17 +8,17 @@ const About = () => {
     {
       year: "1977",
       title: "Foundation",
-      description: "Founded by Late Mr. Hirachand Vora in Mumbai, establishing the foundation for chemical trading excellence.",
+      description: "Founded in Mumbai by the late Mr. Hirachand Vora, Dye Chem Agency began its journey as a trusted partner in the chemical trade. With a strong commitment to integrity, reliability, and customer-centric service, the company quickly earned a reputation for quality in a competitive market. This solid foundation set the tone for decades of sustained growth and excellence.",
     },
     {
       year: "1980s",
       title: "Market Expansion",
-      description: "Expanded operations to serve diverse industries including textiles, dyes, and manufacturing sectors.",
+      description: "Building on early success, Dye Chem Agency expanded its reach to cater to a wider spectrum of industries, including textiles, dyes, paper, and manufacturing sectors. This decade marked the beginning of long-standing relationships with both suppliers and customers, creating a dependable network that fueled further growth.",
     },
     {
       year: "1990s",
       title: "Infrastructure Growth",
-      description: "Established warehousing facilities and strengthened distribution networks across Maharashtra and Gujarat.",
+      description: "Recognizing the importance of efficiency and accessibility, the company invested in strategic warehousing facilities and strengthened its distribution network across Maharashtra and Gujarat. This infrastructure development enabled faster deliveries, larger inventories, and enhanced service capabilities.",
     },
     //{
     //  year: "2000s",
@@ -28,12 +28,12 @@ const About = () => {
     {
       year: "2010s",
       title: "Leadership Transition",
-      description: "Mr. Kalpesh H. Vora took leadership as Proprietor, bringing second-generation expertise and innovation.",
+      description: "With the passing of the baton to Mr. Kalpesh H. Vora, the second generation of leadership ushered in a new era of innovation. Combining modern business practices with the company’s traditional values, Mr. Vora broadened the product portfolio, streamlined operations, and fostered stronger ties with global suppliers.",
     },
     {
       year: "Today",
       title: "Industry Leader",
-      description: "Leading chemical trading company with 48+ years of experience, serving domestic markets.",
+      description: "After over 48 years in the business, Dye Chem Agency stands as a leading name in India’s chemical trading industry. With a strong domestic presence, a diverse product range, and a legacy of trust, the company continues to adapt, innovate, and deliver excellence to customers nationwide.",
     },
   ];
 
@@ -170,7 +170,7 @@ const About = () => {
               </div>
               
               <p className="text-muted-foreground font-inter leading-relaxed mb-6">
-                Second-generation entrepreneur leading Dye Chem Agency with innovative approaches while maintaining the foundational values of quality, reliability, and customer service established by his father.
+              Second-generation entrepreneur leading Dye Chem Agency with innovative approaches while maintaining the foundational values of quality, reliability, and customer service established by his father. With over two decades of experience in the chemical trading industry, he possesses deep expertise in sourcing, supply chain management, and global market trends. His strategic vision has expanded the company’s product portfolio and strengthened relationships with leading manufacturers and clients across multiple industries.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
