@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import emailjs from "@emailjs/browser"; // ADDED
 
 const Contact = () => {
   const [searchParams] = useSearchParams();
@@ -33,16 +34,30 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     try {
-      // Simulate form submission - would integrate with actual email service
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      // Template params expected by your EmailJS template
+      const templateParams = {
+        name: formData.name,
+        company: formData.company || "-",
+        email: formData.email,
+        phone: formData.phone,
+        productInterest: formData.productInterest || "General",
+        message: formData.message,
+      };
+  
+      // Send the email
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID!;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID!;
+      const publicKey  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY!;
+  
+      await emailjs.send(serviceId, templateId, templateParams, { publicKey });
+  
       toast({
         title: "Message Sent Successfully!",
         description: "We'll get back to you within 24 hours.",
       });
-      
+  
       setFormData({
         name: "",
         company: "",
@@ -51,6 +66,7 @@ const Contact = () => {
         productInterest: "",
         message: "",
       });
+
     } catch (error) {
       toast({
         title: "Failed to Send Message",
@@ -66,7 +82,7 @@ const Contact = () => {
     const message = encodeURIComponent(
       `Hello DCA Team, I'm interested in learning more about your chemical products and services.`
     );
-    window.open(`https://wa.me/+91 85918 84487?text=${message}`, "_blank");
+    window.open(`https://wa.me/+918591884487?text=${message}`, "_blank");
   };
 
   const productOptions = [
